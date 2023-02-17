@@ -1,12 +1,13 @@
 import React from "react";
+import '../Main/index.scss';
 import { UseWeatherData } from '../../data/data';
 
-console.log(UseWeatherData);
+console.log(UseWeatherData());
 
 export const Main = () => {
     return (
-        <main>
-        13
+        <main className="appMain">
+            13
         </main>
     )
 }

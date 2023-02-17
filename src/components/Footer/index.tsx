@@ -1,7 +1,10 @@
 import React from "react";
+import '../Footer/index.scss';
 
 export const Footer = () => {
     return (
-        <footer>Footer</footer>
+        <footer className="appFooter">
+            Footer
+        </footer>
     )
 }

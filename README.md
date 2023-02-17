@@ -14,7 +14,7 @@
 
 ## Техническое задание
 #### Технологии:
-* HTML5, CSS3, JavaScript, React, axios
+* HTML5, CSS3, JavaScript, React, axios, SCSS
 
 #### Проверяемые навыки:
 * Верстка, владение необходимыми технологиями (JavaScript, React, axios), интеграция с бэкэнд (получение и обработка данных).
