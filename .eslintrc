@@ -1,0 +1,27 @@
+{
+    "extends": [
+        "react-app",
+        "react-app/jest",
+        "prettier"
+    ],
+    // "plugins": [
+    //     "prettier"
+    // ],
+    "rules": {
+        "no-var": "error",
+        // "no-console": "warn",
+        "prefer-const": "error",
+        "indent": [
+            "warn",
+            4
+        ]
+        // "comma-dangle": [
+        //     "error",
+        //     "always-multiline"
+        // ],
+        // "semi": [
+        //     "warn",
+        //     "always"
+        // ]
+    }
+}
