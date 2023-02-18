@@ -1,8 +1,9 @@
 import React, { useState , useEffect} from "react";
 import '../Date/index.scss';
 
-function Clock(){
-    const [GetDate, setGetDate] = useState(new Date());
+export function Clock() {
+    const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    const [getDate, setGetDate] = useState(new Date());
 
     function reflashClock() {
         setGetDate(new Date());
@@ -15,10 +16,9 @@ function Clock(){
         };
     }, []);
 
-    const todaysDate = 'Сегодня: ' + GetDate.getDate() + '-' + GetDate.getMonth() + '-' + GetDate.getFullYear();
-    const nowTime = 'Время: ' + GetDate.getHours() + ':' + GetDate.getMinutes();
-    return [todaysDate, nowTime];
-}
+    const todaysDate = getDate.getDate() + ' ' + month[getDate.getMonth()] + ' ' + getDate.getFullYear();
+    const nowTime = getDate.getHours() + ':' + getDate.getMinutes();
 
-export default Clock;
+    return [todaysDate, nowTime];
+};
 

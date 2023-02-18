@@ -1,13 +1,17 @@
 import React from "react";
 import '../Main/index.scss';
-import { UseWeatherData } from '../../data/data';
-
-console.log(UseWeatherData());
+// import { Clock } from "../Date";
+import { Weather } from "../Weather";
 
 export const Main = () => {
+    // const [todaysDate, nowTime] = Clock();
     return (
-        <main className="appMain">
-            13
-        </main>
+        <article>
+            {/* <section>
+                <p>{todaysDate}</p>
+                <p>{nowTime}</p>
+            </section> */}
+            <Weather />
+        </article>
     )
 }
