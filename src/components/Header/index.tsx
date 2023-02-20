@@ -1,15 +1,17 @@
 import React from "react";
 import '../Header/index.scss';
 
-export const Header = () => {
+const Header: React.FC = () => {
     return (
         <header className="appHeader">
             <div className="appHeader_text">
-                Weather App
+                Weather
             </div>
             <div className="appHeader_text">
-                <a href="#">Picture App</a>
+                <a href="#">Gallery</a>
             </div>
         </header>
     )
 }
+
+export default Header;

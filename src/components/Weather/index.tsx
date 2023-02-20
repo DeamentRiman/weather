@@ -1,62 +1,79 @@
-import React, { useState, useEffect } from "react";
-import '../Main/index.scss';
+import React, { useState } from "react";
 import axios from "axios";
+import { weatherTemplateObj } from "../../types/getTypes";
+import '../Weather/index.scss';
 
-export const Weather = () => {
+const Weather: React.FC = () => {
     const APP_ID = '66e4877522d19f245c37444d6357831a';
-    const [weatherData, SetWeatherData] = useState(0);
-    const [city, setCity] = useState('Томск');
-    const [LAT, setLAT] = useState('56.488712');
-    const [LON, setLON] = useState('84.952324');
+    const [weatherData, SetWeatherData] = useState(weatherTemplateObj);
+    const [inputData, setInputData] = useState('');
+    const [city, setCity] = useState('');
 
-    useEffect(() => {
-        const FIND_CITY_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${APP_ID}`;
+    const cityHendler = (e: React.ChangeEvent<HTMLInputElement>): void => {
+        setInputData(e.target.value);
+    }
 
-        axios.get(FIND_CITY_URL).then((resp) => {
-            const getLat = resp.data[0].lat;
-            if (LAT != getLat) {
-                setLAT(getLat);
-            }
-            const getLon = resp.data[0].lon;
-            if (LON != getLon) {
-                setLON(getLon);
-            }
-        }).catch((error) => {
-            throw new Error(error);
-        });
-    }, [city, LAT, LON]);
-
-    useEffect(() => {
-        const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&appid=${APP_ID}`;
+    function submitHandler(city:string) {
+        const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APP_ID}`;
 
         axios.get(URL).then((resp) => {
-            const weatherData = resp.data;
-            SetWeatherData(weatherData);
+            const weather = resp.data;
+            SetWeatherData(weather);
         }).catch((error) => {
             throw new Error(error);
         })
-    }, [LAT, LON]);
-    // console.log(weatherData);
+    }
+
+    // console.log(inputData, 'script');
+    // console.log(weatherData, 'script');
 
     return (
-        <section>
-            <input type="text" onChange={(evt) => { setCity(evt.target.value) }} placeholder="Томск" />
-            <p>
-                {city}
-                <span>Дата и время</span>
-            </p>
-            <div>
-                <div>
-                    <p>Влажность</p>
-                    <p>Дата</p>
-                </div>
-                <div>
-                    1254
-                    {/* <img src=`http://openweathermap.org/img/wn/#{}@2x.png` alt='Иконка погоды'/> */}
-                </div>
-
-            </div>
+        <section className="appMainWeather">
+            <form className="appMainWeatherForm" onSubmit={(evt) => {
+                evt.preventDefault();
+                setCity(city);
+                submitHandler(inputData);
+            }}>
+                <input className="appMainWeatherInput"
+                    type="text"
+                    placeholder="Enter city name"
+                    name="city"
+                    onChange={cityHendler}
+                    value={inputData}
+                />
+                <input
+                    className="appMainWeatherButton"
+                    type="submit"
+                    value="Get it!"
+                />
+            </form>
+            {weatherData.base === weatherTemplateObj.base ? <p className="appMainWeatherNoData"></p> : (
+                <section className="appMainWeatherData">
+                    <div className="appMainWeatherPictire">
+                        <img className="appMainWeatherImg" src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt="Изображение погоды" />
+                    </div>
+                    <div className="appMainWeatherWrapper">
+                        <p className="appMainWeatherPlace">Location: {weatherData.name}, {weatherData.sys.country}</p>
+                        <p className="appMainWeatherClouds">Clouds: {weatherData.clouds.all} %</p>
+                        <p className="appMainWeatherVisibility">Visibility: {weatherData.visibility} m</p>
+                        <p className="appMainWeatherHumidity">Humidity: {weatherData.main.humidity} %</p>
+                    </div>
+                    <div className="appMainWeatherWrapper">
+                        <p className="appMainWeatherTemp">Temperature: {Math.round(weatherData.main.temp) - 273}<sup>o</sup></p>
+                        <p className="appMainWeatherTempRange">Min / Max: {Math.round(weatherData.main.temp_min) - 273}<sup>o</sup> / {Math.round(weatherData.main.temp_max) - 273}<sup>o</sup></p>
+                        <p className="appMainWeatherTempFeels">Feels Like: {Math.round(weatherData.main.feels_like) - 273}<sup>o</sup></p>
+                        <p className="appMainWeatherPressure">Pressure: {Math.round(weatherData.main.pressure * 100 / 133)} mmhg</p>
+                    </div>
+                    <div className="appMainWeatherWrapper">
+                        <p className="appMainWeatherWind">Wind: {weatherData.wind.speed} m/s</p>
+                        <p className="appMainWeatherWindGust">Wind gust: {weatherData.wind.gust} m/s</p>
+                    </div>
+                    {/* <p>Восход солнца: {weatherData.sys.sunrise}</p>
+                    <p>Заход солнца: {weatherData.sys.sunset}</p> */}
+                </section>)
+            }
         </section>
-
     )
 }
+
+export default Weather;
