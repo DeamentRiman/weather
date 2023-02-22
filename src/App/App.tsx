@@ -1,14 +1,12 @@
 import React from 'react';
 import './index.scss';
 import Header from '../components/Header/index';
-import Main from '../components/Main/index';
 import Footer from '../components/Footer/index';
 
-function App() {
+export const App:React.FC = () =>  {
     return (
         <div className="App">
             <Header/>
-            <Main/>
             <Footer/>
         </div>
     )

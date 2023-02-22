@@ -16,7 +16,6 @@ const NasaAPOD: React.FC = () => {
             throw new Error(error);
         })
     }, []);
-    console.log(nasaApod);
 
     return (
         <section className="appMainNasa">

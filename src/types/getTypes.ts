@@ -53,7 +53,7 @@ export interface IWind {
     gust: number,
 }
 
-export const weatherTemplateObj:WeatherObject = {
+export const weatherTemplateObj: WeatherObject = {
     base: '',
     clouds: { all: 0 },
     cod: 0,
@@ -103,11 +103,64 @@ export interface NasaApodTemplate {
     url: string
 }
 
-export const NasaApodObj:NasaApodTemplate = {
+export const NasaApodObj: NasaApodTemplate = {
     date: '',
     explanation: '',
     hdurl: '',
     media_type: '',
     title: '',
     url: '',
+}
+
+export interface ImageTemplate {
+    alt_description: string | null
+    description: string
+    id: string
+    links: ILinks
+    urls: IUrls
+    user: IUser
+}
+
+export interface ILinks {
+    download: string
+    download_location: string
+    html: string
+    self: string
+}
+export interface IUrls {
+    full: string
+    raw: string
+    regular: string
+    small: string
+    small_s3: string
+    trumb: string
+}
+
+export interface IUser {
+    first_name: string
+    last_name: string
+}
+
+export const ImageTemplateObj:ImageTemplate = {
+    alt_description: '',
+    description: '',
+    id: '',
+    links: {
+        download: '',
+        download_location: '',
+        html: '',
+        self: '',
+    },
+    urls: {
+        full: '',
+        raw: '',
+        regular: '',
+        small: '',
+        small_s3: '',
+        trumb: '',
+    },
+    user: {
+        first_name: '',
+        last_name: '',
+    }
 }

@@ -1,16 +1,23 @@
 import React from "react";
 import '../Header/index.scss';
+import { Routes, Route } from 'react-router-dom';
+import Main from '../Main/index';
+import Gallery from "../Main-gallery/gallery";
+import ErrorPage from "../Error";
 
-const Header: React.FC = () => {
+import Layout from "../../router/Layout";
+
+const Header:React.FC = () => {
     return (
-        <header className="appHeader">
-            <div className="appHeader_text">
-                Weather
-            </div>
-            <div className="appHeader_text">
-                <a href="#">Gallery</a>
-            </div>
-        </header>
+        <>
+            < Routes >
+                <Route path="/" element={<Layout/>}>
+                    <Route path="/" element={<Main />} />
+                    <Route path="/Gallery" element={<Gallery />} />
+                    <Route path="*" element={<ErrorPage />} />
+                </Route>
+            </Routes >
+        </>
     )
 }
 
