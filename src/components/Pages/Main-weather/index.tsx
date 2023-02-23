@@ -1,29 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { getDate, getTime, getDayPeriod } from "../../../utils/getData";
+import React from "react";
+import { getDate, getDayPeriod } from "../../../utils/getData";
 import './index.scss';
 import NasaAPOD from "../../NasaAPOD";
 import Weather from "../../Weather";
 
-const Main: React.FC = () => {
-    const [time, setTime] = useState('');
-    const todaysDate = getDate();
-    useEffect(() => {
-        setTime(getTime());
-        const updateTime = setInterval(() => {
-            setTime(getTime());
-        }, 1000);
-        return () => {
-            clearInterval(updateTime);
-        }
+import Clock from "../../Clock";
 
-    }, []);
+const Main: React.FC = () => {
+    const todaysDate = getDate();
 
     return (
         <article className="appMain">
             <section className={getDayPeriod() ? "appMainDataDay" : "appMainDataNight"}>
                 <div className="appMainDataWrapper">
                     <p className="appMainDate">{todaysDate}</p>
-                    <p className="appMainTime">{time}</p>
+                    <Clock/>
                 </div>
                 <Weather/>
             </section>

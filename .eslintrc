@@ -4,9 +4,6 @@
         "react-app/jest",
         "prettier"
     ],
-    // "plugins": [
-    //     "prettier"
-    // ],
     "rules": {
         "no-var": "error",
         "no-console": "warn",
@@ -14,14 +11,10 @@
         "indent": [
             "warn",
             4
+        ],
+        "comma-dangle": [
+            "error",
+            "always-multiline"
         ]
-        // "comma-dangle": [
-        //     "error",
-        //     "always-multiline"
-        // ],
-        // "semi": [
-        //     "warn",
-        //     "always"
-        // ]
     }
 }

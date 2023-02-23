@@ -7,7 +7,10 @@ export const getDate = () => {
 
 export const getTime = () => {
     const date = new Date();
-    const nowTime = date.getHours() + ':' + date.getMinutes();
+    let finalMin:string;
+    const dateMinute = date.getMinutes();
+    (dateMinute < 10) ? (finalMin = '0' + String(dateMinute)) : finalMin = String(dateMinute);
+    const nowTime = date.getHours() + ':' + finalMin;
     return nowTime;
 }
 

@@ -23,9 +23,8 @@ const Weather: React.FC = () => {
             throw new Error(error);
         })
     }
-
-    // console.log(inputData, 'script');
-    // console.log(weatherData, 'script');
+    
+    console.log(weatherData, 'script');
 
     return (
         <section className="appMainWeather">

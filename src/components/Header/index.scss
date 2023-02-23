@@ -32,6 +32,7 @@
 
     &NavActive {
         color: var(--link-text);
+        font-weight: 600;
 
         &:active,
         &:hover {

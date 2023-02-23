@@ -29,14 +29,10 @@
         background: var(--bg-block-gradient);
     }
 
-    &Date,
-    &Time {
+    &Date {
         color:var(--main-text);
         font-size: 2rem;
         text-align: center;
-    }
-
-    &Date {
         margin-bottom: 15px;
     }
 
@@ -50,7 +46,6 @@
         background: url(../Main-weather/image/city-night.jpg) no-repeat center center;
         background-size: cover;
         overflow: hidden;
-
 
         & .appMainDataWrapper,
         & .appMainWeather {
