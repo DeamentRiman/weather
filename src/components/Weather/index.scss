@@ -2,7 +2,6 @@
     padding: 30px;
     background: var(--bg-block-gradient);
     transition: height 1s;
-    // opacity: 0.7;
 
     &Form {
         max-width: 500px;
@@ -22,7 +21,7 @@
         transition: border-color 0.4s;
 
         &:active,
-        &:focus, 
+        &:focus,
         &:hover {
             color: var(--main-text);
             border-color: var(--main-text);
@@ -61,12 +60,6 @@
         }
     }
 
-    // &NoData {
-    //     margin-top: 15px;
-    //     color: var(--main-text);
-    //     text-align: center;
-    // }
-
     &Data {
         display: flex;
         margin-top: 30px;
@@ -100,7 +93,5 @@
 
     &Place {
         position: relative;
-
     }
-
 }

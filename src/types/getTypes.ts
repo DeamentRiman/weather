@@ -49,8 +49,8 @@ export interface IWeather {
 
 export interface IWind {
     speed: number
-    deg: number,
-    gust: number,
+    deg: number
+    gust: number
 }
 
 export const weatherTemplateObj: WeatherObject = {
@@ -77,21 +77,23 @@ export const weatherTemplateObj: WeatherObject = {
         id: 0,
         country: '',
         sunrise: 0,
-        sunset: 0
+        sunset: 0,
     },
     timezone: 0,
     visibility: 0,
-    weather: [{
-        description: '',
-        icon: '',
-        id: 0,
-        main: '',
-    }],
+    weather: [
+        {
+            description: '',
+            icon: '',
+            id: 0,
+            main: '',
+        },
+    ],
     wind: {
         speed: 0,
         deg: 0,
         gust: 0,
-    }
+    },
 }
 
 export interface NasaApodTemplate {
@@ -141,7 +143,7 @@ export interface IUser {
     last_name: string
 }
 
-export const ImageTemplateObj:ImageTemplate = {
+export const ImageTemplateObj: ImageTemplate = {
     alt_description: '',
     description: '',
     id: '',
@@ -162,5 +164,5 @@ export const ImageTemplateObj:ImageTemplate = {
     user: {
         first_name: '',
         last_name: '',
-    }
+    },
 }

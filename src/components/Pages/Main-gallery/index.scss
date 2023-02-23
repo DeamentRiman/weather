@@ -22,7 +22,7 @@
         transition: opacity 0.4s;
 
         &:active,
-        &:focus, 
+        &:focus,
         &:hover {
             opacity: 0.7;
         }
@@ -62,4 +62,3 @@
         color: var(--bg-border);
     }
 }
-

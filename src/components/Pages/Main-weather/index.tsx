@@ -1,25 +1,29 @@
-import React from "react";
-import { getDate, getDayPeriod } from "../../../utils/getData";
-import './index.scss';
-import NasaAPOD from "../../NasaAPOD";
-import Weather from "../../Weather";
+import React from 'react'
+import { getDate, getDayPeriod } from '../../../utils/getData'
+import './index.scss'
+import NasaAPOD from '../../NasaAPOD'
+import Weather from '../../Weather'
 
-import Clock from "../../Clock";
+import Clock from '../../Clock'
 
 const Main: React.FC = () => {
-    const todaysDate = getDate();
+    const todaysDate = getDate()
 
     return (
         <article className="appMain">
-            <section className={getDayPeriod() ? "appMainDataDay" : "appMainDataNight"}>
+            <section
+                className={
+                    getDayPeriod() ? 'appMainDataDay' : 'appMainDataNight'
+                }
+            >
                 <div className="appMainDataWrapper">
                     <p className="appMainDate">{todaysDate}</p>
-                    <Clock/>
+                    <Clock />
                 </div>
-                <Weather/>
+                <Weather />
             </section>
-            <NasaAPOD/>
+            <NasaAPOD />
         </article>
     )
 }
-export default Main;
+export default Main

@@ -1,15 +1,15 @@
-import React from 'react';
-import './index.scss';
-import Header from '../components/Header/index';
-import Footer from '../components/Footer/index';
+import React from 'react'
+import './index.scss'
+import Header from '../components/Header/index'
+import Footer from '../components/Footer/index'
 
-export const App:React.FC = () =>  {
+export const App: React.FC = () => {
     return (
         <div className="App">
-            <Header/>
-            <Footer/>
+            <Header />
+            <Footer />
         </div>
     )
 }
 
-export default App;
+export default App
