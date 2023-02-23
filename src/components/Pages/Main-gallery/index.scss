@@ -1,0 +1,65 @@
+.appMain {
+    &GalleryForm {
+        display: flex;
+        max-width: 600px;
+        margin: 0 auto 50px;
+    }
+
+    &GalleryPictures {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -30px -30px;
+    }
+
+    &GalleryInput {
+        min-width: 250px;
+        margin-right: 30px;
+        padding: 7px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid var(--bg-border);
+        color: var(--bg-border);
+        transition: opacity 0.4s;
+
+        &:active,
+        &:focus, 
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:active,
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: var(--bg-border);
+        }
+
+        &:focus::placeholder {
+            color: transparent;
+        }
+    }
+
+    &GalleryButton {
+        width: 80px;
+        padding: 7px 10px;
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        color: var(--bg-border);
+        transition: opacity 0.4s;
+
+        &:active,
+        &:focus,
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &GalleryError {
+        margin: 0 auto;
+        color: var(--bg-border);
+    }
+}
+

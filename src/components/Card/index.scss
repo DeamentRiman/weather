@@ -1,0 +1,20 @@
+.appMainGallery{
+    &Card {
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+        margin: 0 30px 30px;
+        padding: 15px;
+        outline: 1px solid var(--bg-border);
+    }
+
+    &Image {
+        margin-bottom: 20px;
+    }
+
+    &Descr {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+}

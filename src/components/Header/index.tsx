@@ -1,8 +1,8 @@
 import React from "react";
 import '../Header/index.scss';
 import { Routes, Route } from 'react-router-dom';
-import Main from '../Main/index';
-import Gallery from "../Main-gallery/gallery";
+import Main from '../Pages/Main-weather/index';
+import Gallery from "../Pages/Main-gallery/gallery";
 import ErrorPage from "../Error";
 
 import Layout from "../../router/Layout";

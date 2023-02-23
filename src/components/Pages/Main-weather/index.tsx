@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { getDate, getTime, getDayPeriod } from "../../utils/getData";
-import '../Main/index.scss';
-import NasaAPOD from "../NasaAPOD";
-import Weather from "../Weather";
+import { getDate, getTime, getDayPeriod } from "../../../utils/getData";
+import './index.scss';
+import NasaAPOD from "../../NasaAPOD";
+import Weather from "../../Weather";
 
 const Main: React.FC = () => {
     const [time, setTime] = useState('');
     const todaysDate = getDate();
-    // console.log(time, 111);
     useEffect(() => {
         setTime(getTime());
         const updateTime = setInterval(() => {
@@ -18,7 +17,6 @@ const Main: React.FC = () => {
         }
 
     }, []);
-    // console.log(getDayPeriod());
 
     return (
         <article className="appMain">
