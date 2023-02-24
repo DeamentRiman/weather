@@ -90,21 +90,27 @@ const Gallery: React.FC = () => {
                     />
                 </form>
                 <div className="appMainGalleryPictures">
-                    {!images[0] && isEditMode === false ? (
+                    {!images[0] && !isEditMode ? (
                         <ImageCard
+                            key={randomPicture.id}
+                            id={randomPicture.id}
                             src={randomPicture.urls.small}
                             description={randomPicture.alt_description}
+                            name={randomPicture.user.name}
                         />
                     ) : images.length === 0 ? (
                         <p className="appMainGalleryError">
                             Не подходящих изображений
                         </p>
                     ) : (
-                        images.map((image: any, index: number) => {
+                        images.map((image: any) => {
                             return (
                                 <ImageCard
+                                    key={image.id}
+                                    id={image.id}
                                     src={image.urls.small}
                                     description={image.alt_description}
+                                    name={image.user.name}
                                 />
                             )
                         })

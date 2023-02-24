@@ -139,8 +139,7 @@ export interface IUrls {
 }
 
 export interface IUser {
-    first_name: string
-    last_name: string
+    name: string
 }
 
 export const ImageTemplateObj: ImageTemplate = {
@@ -162,7 +161,6 @@ export const ImageTemplateObj: ImageTemplate = {
         trumb: '',
     },
     user: {
-        first_name: '',
-        last_name: '',
+        name: '',
     },
 }

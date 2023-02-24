@@ -9,7 +9,7 @@ const Weather: React.FC = () => {
     const [inputData, setInputData] = useState('')
     const [city, setCity] = useState('')
 
-    const cityHendler = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const cityHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setInputData(e.target.value)
     }
 
@@ -42,7 +42,7 @@ const Weather: React.FC = () => {
                     type="text"
                     placeholder="Enter city name"
                     name="city"
-                    onChange={cityHendler}
+                    onChange={cityHandler}
                     value={inputData}
                 />
                 <input
