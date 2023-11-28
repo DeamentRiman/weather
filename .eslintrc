@@ -1,9 +1,0 @@
-{
-    "extends": ["react-app", "react-app/jest", "prettier"],
-    "rules": {
-        "no-var": "error",
-        "no-console": "warn",
-        "prefer-const": "error",
-        "indent": ["warn", 4]
-    }
-}
